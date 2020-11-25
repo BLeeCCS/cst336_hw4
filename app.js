@@ -4,8 +4,12 @@ const app = express();
 app.engine('html', require('ejs').renderFile);
 app.use(express.static("public"));
 
+var faker = require('faker');
+
+var randomAvatar = faker.image.technics();
+
 app.get("/", function(req, res){
-    res.render("index.html"); 
+    res.render("index.html", {"randomAvatar":randomAvatar}); 
 });
 
 app.get("/home", function(req, res){
