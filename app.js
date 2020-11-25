@@ -13,7 +13,7 @@ app.get("/", function(req, res){
 });
 
 app.get("/home", function(req, res){
-    res.render("index.html"); 
+    res.render("index.html", {"randomAvatar":randomAvatar}); 
 });
 
 app.get("/superComputer", function(req, res){
